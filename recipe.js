@@ -1,6 +1,8 @@
 // 레시피 세부 정보를 현재 페이지에 표시
 function displayRecipePage(meal) {
   // 특정 레시피의 세부 정보를 가져오는 함수
+  // lookup.php 엔드포인트를 사용하여 음식의 고유 idMeal을 기반으로 상세 정보를 가져옴.
+  // (특정 나라, 재료를 클릭해서 나온 결과 클릭시, 세부내용이 반영되지 않아서 다시 찾아봄.)
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
   .then(response => response.json())
   .then(data => {
